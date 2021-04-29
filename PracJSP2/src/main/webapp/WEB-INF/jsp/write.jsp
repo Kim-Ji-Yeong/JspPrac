@@ -7,12 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-<form action = "/write" method = "post">
-제목 : <input type = "text" name = "title">
-내용 : <textarea name = "ctnt"></textarea>
-	<input type = "submit">
-	</form>
-</div>
+
+    <form action = "/write" method = "post">
+   <p> 제목 : <input type = "text" name = "title"></p>
+   <p> 내용 :<textarea name = "ctnt"></textarea></p>
+    <input type ="submit" value = "보내기">
+    <p><a href = "/list">돌아가기</a></p>
+    </form>
+
 </body>
 </html>

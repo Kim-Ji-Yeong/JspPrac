@@ -10,27 +10,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/list")
-public class ServletList extends HttpServlet {
+
+@WebServlet("/detail")
+public class detailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		String no = request.getParameter("no");
+		int intNo = Integer.parseInt(no);
 		
 		List<Go> list = GoNew.list;
-		request.setAttribute("list", list);
+		Go go = list.get(intNo);
 		
-		String jsp = "/WEB-INF/jsp/list.jsp";
+		request.setAttribute("go",go);
+		
+		String jsp = "/WEB-INF/jsp/detail.jsp";
 		request.getRequestDispatcher(jsp).forward(request, response);
-		
 		
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	
+		
 	}
 
 }
